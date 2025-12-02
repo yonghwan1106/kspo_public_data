@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Dumbbell, Heart, StretchHorizontal, Footprints, Timer, Hand, Activity, CheckCircle2, Info, ChevronDown, ChevronUp } from "lucide-react";
 import { exercisePrescriptionStats } from "@/lib/data/statistics";
 import {
@@ -315,8 +316,12 @@ export default function ExercisePage() {
               >
                 <div className="relative h-32 md:h-40 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-90 group-hover:opacity-100 transition-opacity z-10`} />
-                  {/* @ts-ignore */}
-                  <img src={category.image} alt={category.name} className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-cover mix-blend-overlay opacity-50"
+                  />
 
                   <div className="absolute inset-0 z-20 flex items-center justify-between px-6">
                     <div className="flex items-center gap-4 text-white">

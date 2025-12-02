@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Activity, TrendingUp, Users, MapPin, Award, Heart, Dumbbell, Target } from "lucide-react";
 import { summaryStats, regionalStats } from "@/lib/data/statistics";
 
@@ -12,10 +13,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/hero_bg.png"
             alt="Background"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            className="object-cover opacity-30"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/80 to-emerald-800/80 mix-blend-multiply" />
         </div>
@@ -240,10 +243,11 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0">
-              <img
+              <Image
                 src="/images/cta_bg.png"
                 alt="Active Lifestyle"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-emerald-900/80 mix-blend-multiply" />
             </div>

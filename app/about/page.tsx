@@ -14,6 +14,7 @@ import {
   Smartphone,
   Server
 } from "lucide-react";
+import Image from "next/image";
 import { summaryStats } from "@/lib/data/statistics";
 
 export default function AboutPage() {
@@ -22,10 +23,12 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/images/about_hero_bg.png"
             alt="About Background"
-            className="w-full h-full object-cover opacity-30"
+            fill
+            className="object-cover opacity-30"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/90 to-emerald-800/90" />
         </div>
