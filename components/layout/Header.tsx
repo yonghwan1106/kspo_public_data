@@ -9,6 +9,7 @@ const navItems = [
   { href: "/calculator", label: "피트에이지 측정" },
   { href: "/dashboard", label: "전국 현황" },
   { href: "/exercise", label: "운동처방" },
+  { href: "/about", label: "프로젝트 소개" },
 ];
 
 export default function Header() {
