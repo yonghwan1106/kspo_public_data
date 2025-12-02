@@ -1,0 +1,282 @@
+{
+  "summaryStats": {
+    "totalParticipants": 753402,
+    "avgFitAge": 0,
+    "maleParticipants": 437618,
+    "femaleParticipants": 315784,
+    "goldGradeRate": 6.4,
+    "silverGradeRate": 14.1,
+    "bronzeGradeRate": 20.7,
+    "dataSource": "국민체육진흥공단 체력측정 항목별 측정 데이터",
+    "lastUpdated": "2025.07"
+  },
+  "regionalStats": [
+    {
+      "region": "경기",
+      "participants": 140055,
+      "avgFitAge": 0,
+      "maleRatio": 56,
+      "grade": {
+        "gold": 6,
+        "silver": 15,
+        "bronze": 22
+      }
+    },
+    {
+      "region": "서울",
+      "participants": 101691,
+      "avgFitAge": 0,
+      "maleRatio": 56,
+      "grade": {
+        "gold": 10,
+        "silver": 19,
+        "bronze": 22
+      }
+    },
+    {
+      "region": "부산",
+      "participants": 81518,
+      "avgFitAge": 0,
+      "maleRatio": 58,
+      "grade": {
+        "gold": 6,
+        "silver": 13,
+        "bronze": 21
+      }
+    },
+    {
+      "region": "전북",
+      "participants": 58932,
+      "avgFitAge": 0,
+      "maleRatio": 59,
+      "grade": {
+        "gold": 6,
+        "silver": 12,
+        "bronze": 19
+      }
+    },
+    {
+      "region": "전남",
+      "participants": 57420,
+      "avgFitAge": 0,
+      "maleRatio": 56,
+      "grade": {
+        "gold": 4,
+        "silver": 10,
+        "bronze": 18
+      }
+    },
+    {
+      "region": "강원",
+      "participants": 52618,
+      "avgFitAge": 0,
+      "maleRatio": 59,
+      "grade": {
+        "gold": 7,
+        "silver": 14,
+        "bronze": 19
+      }
+    },
+    {
+      "region": "경북",
+      "participants": 47578,
+      "avgFitAge": 0,
+      "maleRatio": 66,
+      "grade": {
+        "gold": 6,
+        "silver": 14,
+        "bronze": 20
+      }
+    },
+    {
+      "region": "대구",
+      "participants": 47376,
+      "avgFitAge": 0,
+      "maleRatio": 55,
+      "grade": {
+        "gold": 7,
+        "silver": 16,
+        "bronze": 23
+      }
+    },
+    {
+      "region": "충북",
+      "participants": 43150,
+      "avgFitAge": 0,
+      "maleRatio": 59,
+      "grade": {
+        "gold": 4,
+        "silver": 11,
+        "bronze": 19
+      }
+    },
+    {
+      "region": "경남",
+      "participants": 34748,
+      "avgFitAge": 0,
+      "maleRatio": 67,
+      "grade": {
+        "gold": 8,
+        "silver": 16,
+        "bronze": 22
+      }
+    },
+    {
+      "region": "충남",
+      "participants": 30283,
+      "avgFitAge": 0,
+      "maleRatio": 64,
+      "grade": {
+        "gold": 5,
+        "silver": 13,
+        "bronze": 21
+      }
+    },
+    {
+      "region": "광주",
+      "participants": 22651,
+      "avgFitAge": 0,
+      "maleRatio": 57,
+      "grade": {
+        "gold": 6,
+        "silver": 13,
+        "bronze": 21
+      }
+    },
+    {
+      "region": "인천",
+      "participants": 12773,
+      "avgFitAge": 0,
+      "maleRatio": 51,
+      "grade": {
+        "gold": 4,
+        "silver": 9,
+        "bronze": 20
+      }
+    },
+    {
+      "region": "세종",
+      "participants": 10995,
+      "avgFitAge": 0,
+      "maleRatio": 46,
+      "grade": {
+        "gold": 8,
+        "silver": 13,
+        "bronze": 18
+      }
+    },
+    {
+      "region": "제주",
+      "participants": 7838,
+      "avgFitAge": 0,
+      "maleRatio": 69,
+      "grade": {
+        "gold": 5,
+        "silver": 12,
+        "bronze": 20
+      }
+    }
+  ],
+  "ageDistribution": [
+    {
+      "ageGroup": "유소년(6-12세)",
+      "male": 49136,
+      "female": 45645,
+      "total": 94781
+    },
+    {
+      "ageGroup": "청소년(13-18세)",
+      "male": 132060,
+      "female": 88858,
+      "total": 220918
+    },
+    {
+      "ageGroup": "65세 이상",
+      "male": 44393,
+      "female": 39329,
+      "total": 83722
+    },
+    {
+      "ageGroup": "40-44세",
+      "male": 12222,
+      "female": 6329,
+      "total": 18551
+    },
+    {
+      "ageGroup": "35-39세",
+      "male": 14233,
+      "female": 5166,
+      "total": 19399
+    },
+    {
+      "ageGroup": "50-54세",
+      "male": 10128,
+      "female": 11494,
+      "total": 21622
+    },
+    {
+      "ageGroup": "55-59세",
+      "male": 9914,
+      "female": 11139,
+      "total": 21053
+    },
+    {
+      "ageGroup": "30-34세",
+      "male": 21803,
+      "female": 7642,
+      "total": 29445
+    },
+    {
+      "ageGroup": "19-24세",
+      "male": 69444,
+      "female": 44586,
+      "total": 114030
+    },
+    {
+      "ageGroup": "25-29세",
+      "male": 26431,
+      "female": 21795,
+      "total": 48226
+    },
+    {
+      "ageGroup": "60-64세",
+      "male": 20280,
+      "female": 10721,
+      "total": 31001
+    },
+    {
+      "ageGroup": "45-49세",
+      "male": 10747,
+      "female": 7361,
+      "total": 18108
+    },
+    {
+      "ageGroup": "유아기",
+      "male": 16827,
+      "female": 15719,
+      "total": 32546
+    }
+  ],
+  "exercisePrescriptionStats": [
+    {
+      "type": "유산소 운동",
+      "count": 136022,
+      "percentage": 34.6
+    },
+    {
+      "type": "유연성 운동",
+      "count": 159757,
+      "percentage": 40.6
+    },
+    {
+      "type": "근력 운동",
+      "count": 74138,
+      "percentage": 18.8
+    },
+    {
+      "type": "균형 운동",
+      "count": 23530,
+      "percentage": 6
+    }
+  ]
+}

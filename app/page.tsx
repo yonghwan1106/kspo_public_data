@@ -263,15 +263,15 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-blue-500 rounded-full" />
-              <span>체력측정 항목별 측정 데이터 (34,120건)</span>
+              <span>체력측정 항목별 측정 데이터 (753,402건)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-              <span>운동처방 데이터 (16,192건)</span>
+              <span>운동처방 데이터 (393,447건)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-purple-500 rounded-full" />
-              <span>국민체력측정 현황 데이터 (15,505건)</span>
+              <span>국민체력측정 현황 데이터 (17개 시도)</span>
             </div>
           </div>
           <p className="text-xs text-muted-foreground mt-4">

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, User, Ruler, Scale, Hand, Timer, StretchHorizontal, Footprints, Wind, Trophy, TrendingUp, AlertCircle, CheckCircle2, Dumbbell } from "lucide-react";
+import { Activity, User, Ruler, Scale, Hand, Timer, StretchHorizontal, Footprints, Wind, Trophy, TrendingUp, AlertCircle, CheckCircle2, Dumbbell, Radar } from "lucide-react";
 import { calculateFitAge, calculateBMI, getBMICategory, type FitnessInput, type FitnessResult } from "@/lib/algorithms/fitness-age";
+import FitnessRadarChart from "@/components/charts/FitnessRadarChart";
 
 export default function CalculatorPage() {
   const [step, setStep] = useState(1);
@@ -383,6 +384,18 @@ export default function CalculatorPage() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Radar Chart */}
+            <div className="bg-card rounded-2xl shadow-sm p-6 md:p-8">
+              <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <Radar className="h-5 w-5 text-purple-500" />
+                체력 프로필
+              </h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                동일 연령대/성별 대비 나의 체력 수준 (백분위)
+              </p>
+              <FitnessRadarChart scores={result.scores} gender={formData.gender} />
             </div>
 
             {/* Detailed Scores */}

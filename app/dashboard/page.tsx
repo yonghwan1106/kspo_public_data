@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Users, TrendingUp, Award, BarChart3, PieChart, Filter } from "lucide-react";
+import { MapPin, Users, TrendingUp, Award, BarChart3, PieChart, Filter, Map } from "lucide-react";
 import { regionalStats, ageDistribution, summaryStats, fitnessStandards } from "@/lib/data/statistics";
+import KoreaMap from "@/components/charts/KoreaMap";
 import {
   BarChart,
   Bar,
@@ -110,6 +111,58 @@ export default function DashboardPage() {
           </div>
         </div>
 
+        {/* Korea Map Section */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-8">
+          <div className="bg-card rounded-2xl shadow-sm p-6">
+            <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
+              <Map className="h-5 w-5 text-blue-500" />
+              대한민국 체력 지도
+            </h2>
+            <KoreaMap
+              data={regionalStats}
+              selectedRegion={selectedRegion}
+              onRegionSelect={setSelectedRegion}
+            />
+          </div>
+
+          {/* Grade Distribution Pie Chart - moved here */}
+          <div className="bg-card rounded-2xl shadow-sm p-6">
+            <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
+              <PieChart className="h-5 w-5 text-blue-500" />
+              체력등급 분포
+            </h2>
+            <div className="h-[300px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <RechartsPieChart>
+                  <Pie
+                    data={gradeDistribution}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={100}
+                    paddingAngle={5}
+                    dataKey="value"
+                    label={({ name, value }) => `${name} ${value}%`}
+                  >
+                    {gradeDistribution.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip formatter={(value) => `${value}%`} />
+                </RechartsPieChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex justify-center gap-6 mt-4">
+              {gradeDistribution.map((item) => (
+                <div key={item.name} className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
+                  <span className="text-sm">{item.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-6 mb-8">
           {/* Regional Ranking */}
           <div className="bg-card rounded-2xl shadow-sm overflow-hidden">
@@ -162,43 +215,6 @@ export default function DashboardPage() {
                       골드 {region.grade.gold}%
                     </p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Grade Distribution Pie Chart */}
-          <div className="bg-card rounded-2xl shadow-sm p-6">
-            <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
-              <PieChart className="h-5 w-5 text-blue-500" />
-              체력등급 분포
-            </h2>
-            <div className="h-[300px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <RechartsPieChart>
-                  <Pie
-                    data={gradeDistribution}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={100}
-                    paddingAngle={5}
-                    dataKey="value"
-                    label={({ name, value }) => `${name} ${value}%`}
-                  >
-                    {gradeDistribution.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip formatter={(value) => `${value}%`} />
-                </RechartsPieChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="flex justify-center gap-6 mt-4">
-              {gradeDistribution.map((item) => (
-                <div key={item.name} className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
-                  <span className="text-sm">{item.name}</span>
                 </div>
               ))}
             </div>

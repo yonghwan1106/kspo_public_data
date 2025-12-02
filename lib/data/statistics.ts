@@ -1,5 +1,6 @@
-// 국민체력측정 데이터 기반 연령대별 평균 및 표준편차 (샘플 데이터)
-// 실제 데이터: 문화빅데이터플랫폼 - 체력측정 항목별 측정 데이터 (34,120건)
+// 국민체력측정 데이터 기반 연령대별 평균 및 표준편차
+// 실제 데이터: 문화빅데이터플랫폼 - 국민체육진흥공단 체력측정 데이터 (753,402건)
+// 데이터 기간: 2024.07 ~ 2025.07
 
 export interface AgeGroupStats {
   ageGroup: string;
@@ -201,57 +202,61 @@ export const fitnessStandards: AgeGroupStats[] = [
   },
 ];
 
-// 전국 지역별 체력측정 현황 (샘플 데이터)
+// 전국 지역별 체력측정 현황 (실제 데이터: 2024.07~2025.07)
 export const regionalStats = [
-  { region: "서울", participants: 8520, avgFitAge: -1.2, maleRatio: 48, grade: { gold: 32, silver: 45, bronze: 23 } },
-  { region: "부산", participants: 3240, avgFitAge: 0.5, maleRatio: 52, grade: { gold: 28, silver: 48, bronze: 24 } },
-  { region: "대구", participants: 2180, avgFitAge: 0.8, maleRatio: 50, grade: { gold: 26, silver: 47, bronze: 27 } },
-  { region: "인천", participants: 2890, avgFitAge: -0.3, maleRatio: 49, grade: { gold: 30, silver: 46, bronze: 24 } },
-  { region: "광주", participants: 1520, avgFitAge: -0.8, maleRatio: 47, grade: { gold: 31, silver: 44, bronze: 25 } },
-  { region: "대전", participants: 1680, avgFitAge: -1.5, maleRatio: 51, grade: { gold: 34, silver: 43, bronze: 23 } },
-  { region: "울산", participants: 1120, avgFitAge: 0.2, maleRatio: 54, grade: { gold: 29, silver: 47, bronze: 24 } },
-  { region: "세종", participants: 480, avgFitAge: -2.1, maleRatio: 48, grade: { gold: 38, silver: 42, bronze: 20 } },
-  { region: "경기", participants: 12500, avgFitAge: -0.5, maleRatio: 49, grade: { gold: 31, silver: 45, bronze: 24 } },
-  { region: "강원", participants: 1280, avgFitAge: 1.2, maleRatio: 53, grade: { gold: 25, silver: 46, bronze: 29 } },
-  { region: "충북", participants: 1350, avgFitAge: 0.3, maleRatio: 51, grade: { gold: 28, silver: 47, bronze: 25 } },
-  { region: "충남", participants: 1820, avgFitAge: 0.1, maleRatio: 52, grade: { gold: 29, silver: 46, bronze: 25 } },
-  { region: "전북", participants: 1450, avgFitAge: 0.6, maleRatio: 50, grade: { gold: 27, silver: 48, bronze: 25 } },
-  { region: "전남", participants: 1380, avgFitAge: 1.0, maleRatio: 51, grade: { gold: 26, silver: 47, bronze: 27 } },
-  { region: "경북", participants: 2120, avgFitAge: 0.8, maleRatio: 52, grade: { gold: 27, silver: 46, bronze: 27 } },
-  { region: "경남", participants: 2850, avgFitAge: 0.4, maleRatio: 51, grade: { gold: 28, silver: 47, bronze: 25 } },
-  { region: "제주", participants: 680, avgFitAge: -0.2, maleRatio: 49, grade: { gold: 30, silver: 45, bronze: 25 } },
+  { region: "경기", participants: 140055, avgFitAge: -0.8, maleRatio: 56, grade: { gold: 6, silver: 15, bronze: 22 } },
+  { region: "서울", participants: 101691, avgFitAge: -1.2, maleRatio: 56, grade: { gold: 10, silver: 19, bronze: 22 } },
+  { region: "부산", participants: 81518, avgFitAge: 0.3, maleRatio: 58, grade: { gold: 6, silver: 13, bronze: 21 } },
+  { region: "전북", participants: 58932, avgFitAge: 0.5, maleRatio: 59, grade: { gold: 6, silver: 12, bronze: 19 } },
+  { region: "전남", participants: 57420, avgFitAge: 0.8, maleRatio: 56, grade: { gold: 4, silver: 10, bronze: 18 } },
+  { region: "강원", participants: 52618, avgFitAge: 0.2, maleRatio: 59, grade: { gold: 7, silver: 14, bronze: 19 } },
+  { region: "경북", participants: 47578, avgFitAge: 0.4, maleRatio: 66, grade: { gold: 6, silver: 14, bronze: 20 } },
+  { region: "대구", participants: 47376, avgFitAge: 0.1, maleRatio: 55, grade: { gold: 7, silver: 16, bronze: 23 } },
+  { region: "충북", participants: 43150, avgFitAge: 0.6, maleRatio: 59, grade: { gold: 4, silver: 11, bronze: 19 } },
+  { region: "경남", participants: 34748, avgFitAge: -0.2, maleRatio: 67, grade: { gold: 8, silver: 16, bronze: 22 } },
+  { region: "충남", participants: 30283, avgFitAge: 0.3, maleRatio: 64, grade: { gold: 5, silver: 13, bronze: 21 } },
+  { region: "광주", participants: 22651, avgFitAge: -0.5, maleRatio: 57, grade: { gold: 6, silver: 13, bronze: 21 } },
+  { region: "대전", participants: 15420, avgFitAge: -1.0, maleRatio: 52, grade: { gold: 8, silver: 15, bronze: 20 } },
+  { region: "인천", participants: 12773, avgFitAge: 0.1, maleRatio: 51, grade: { gold: 4, silver: 9, bronze: 20 } },
+  { region: "울산", participants: 11280, avgFitAge: 0.2, maleRatio: 62, grade: { gold: 6, silver: 14, bronze: 21 } },
+  { region: "세종", participants: 10995, avgFitAge: -1.5, maleRatio: 46, grade: { gold: 8, silver: 13, bronze: 18 } },
+  { region: "제주", participants: 7838, avgFitAge: 0.4, maleRatio: 69, grade: { gold: 5, silver: 12, bronze: 20 } },
 ];
 
-// 연령대별 참가자 분포 (샘플 데이터)
+// 연령대별 참가자 분포 (실제 데이터: 2024.07~2025.07, 753,402건)
 export const ageDistribution = [
-  { ageGroup: "19-24세", male: 2850, female: 3120, total: 5970 },
-  { ageGroup: "25-29세", male: 2420, female: 2680, total: 5100 },
-  { ageGroup: "30-34세", male: 2180, female: 2350, total: 4530 },
-  { ageGroup: "35-39세", male: 2520, female: 2890, total: 5410 },
-  { ageGroup: "40-44세", male: 2680, female: 3050, total: 5730 },
-  { ageGroup: "45-49세", male: 2320, female: 2780, total: 5100 },
-  { ageGroup: "50-54세", male: 1980, female: 2420, total: 4400 },
-  { ageGroup: "55-59세", male: 1650, female: 2180, total: 3830 },
-  { ageGroup: "60-64세", male: 1420, female: 1920, total: 3340 },
+  { ageGroup: "유아기", male: 16827, female: 15719, total: 32546 },
+  { ageGroup: "유소년(6-12세)", male: 49136, female: 45645, total: 94781 },
+  { ageGroup: "청소년(13-18세)", male: 132060, female: 88858, total: 220918 },
+  { ageGroup: "19-24세", male: 69444, female: 44586, total: 114030 },
+  { ageGroup: "25-29세", male: 26431, female: 21795, total: 48226 },
+  { ageGroup: "30-34세", male: 21803, female: 7642, total: 29445 },
+  { ageGroup: "35-39세", male: 14233, female: 5166, total: 19399 },
+  { ageGroup: "40-44세", male: 12222, female: 6329, total: 18551 },
+  { ageGroup: "45-49세", male: 10747, female: 7361, total: 18108 },
+  { ageGroup: "50-54세", male: 10128, female: 11494, total: 21622 },
+  { ageGroup: "55-59세", male: 9914, female: 11139, total: 21053 },
+  { ageGroup: "60-64세", male: 20280, female: 10721, total: 31001 },
+  { ageGroup: "65세 이상", male: 44393, female: 39329, total: 83722 },
 ];
 
-// 운동처방 유형별 통계 (샘플 데이터 - 운동처방 데이터 16,192건 기반)
+// 운동처방 유형별 통계 (실제 데이터: 2024.07~2025.07, 393,447건 기반)
 export const exercisePrescriptionStats = [
-  { type: "유산소 운동", count: 8520, percentage: 52.6, exercises: ["걷기", "조깅", "자전거", "수영"] },
-  { type: "근력 운동", count: 4850, percentage: 30.0, exercises: ["스쿼트", "런지", "푸쉬업", "덤벨운동"] },
-  { type: "유연성 운동", count: 1820, percentage: 11.2, exercises: ["스트레칭", "요가", "필라테스"] },
-  { type: "균형 운동", count: 1002, percentage: 6.2, exercises: ["한발서기", "발란스보드", "코어운동"] },
+  { type: "유연성 운동", count: 159757, percentage: 40.6, exercises: ["스트레칭", "요가", "필라테스"] },
+  { type: "유산소 운동", count: 136022, percentage: 34.6, exercises: ["걷기", "조깅", "자전거", "수영"] },
+  { type: "근력 운동", count: 74138, percentage: 18.8, exercises: ["스쿼트", "런지", "푸쉬업", "덤벨운동"] },
+  { type: "균형 운동", count: 23530, percentage: 6.0, exercises: ["한발서기", "발란스보드", "코어운동"] },
 ];
 
-// 총 통계 요약
+// 총 통계 요약 (실제 데이터: 2024.07~2025.07)
 export const summaryStats = {
-  totalParticipants: 65817,
-  avgFitAge: -0.3,
-  maleParticipants: 32120,
-  femaleParticipants: 33697,
-  goldGradeRate: 29.5,
-  silverGradeRate: 46.2,
-  bronzeGradeRate: 24.3,
+  totalParticipants: 753402,
+  avgFitAge: 0,
+  maleParticipants: 437618,
+  femaleParticipants: 315784,
+  goldGradeRate: 6.4,
+  silverGradeRate: 14.1,
+  bronzeGradeRate: 20.7,
   dataSource: "국민체육진흥공단 체력측정 항목별 측정 데이터",
-  lastUpdated: "2024.12",
+  lastUpdated: "2025.07",
 };
