@@ -21,18 +21,24 @@ export default function AboutPage() {
     <div className="min-h-screen bg-muted/30">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-emerald-500" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+        <div className="absolute inset-0">
+          <img
+            src="/images/about_hero_bg.png"
+            alt="About Background"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/90 to-emerald-800/90" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/10">
               <Award className="h-4 w-4" />
               <span className="text-sm font-medium">2025 국민체육진흥공단 공공데이터 활용 경진대회</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">
               피트에이지 (FitAge)
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md">
               국민체력측정 빅데이터 기반 체력나이 측정 및 맞춤형 운동처방 서비스
             </p>
           </div>

@@ -21,6 +21,7 @@ const exerciseCategories = [
     id: "cardio",
     name: "심폐지구력",
     icon: Heart,
+    image: "/images/cat_cardio.png",
     color: "from-red-500 to-pink-500",
     bgColor: "bg-red-50",
     textColor: "text-red-600",
@@ -60,6 +61,7 @@ const exerciseCategories = [
     id: "strength",
     name: "근력",
     icon: Hand,
+    image: "/images/cat_strength.png",
     color: "from-blue-500 to-indigo-500",
     bgColor: "bg-blue-50",
     textColor: "text-blue-600",
@@ -99,6 +101,7 @@ const exerciseCategories = [
     id: "endurance",
     name: "근지구력",
     icon: Timer,
+    image: "/images/cat_endurance.png",
     color: "from-emerald-500 to-teal-500",
     bgColor: "bg-emerald-50",
     textColor: "text-emerald-600",
@@ -138,6 +141,7 @@ const exerciseCategories = [
     id: "flexibility",
     name: "유연성",
     icon: StretchHorizontal,
+    image: "/images/cat_flexibility.png",
     color: "from-purple-500 to-violet-500",
     bgColor: "bg-purple-50",
     textColor: "text-purple-600",
@@ -177,6 +181,7 @@ const exerciseCategories = [
     id: "power",
     name: "순발력",
     icon: Footprints,
+    image: "/images/cat_power.png",
     color: "from-orange-500 to-amber-500",
     bgColor: "bg-orange-50",
     textColor: "text-orange-600",
@@ -306,22 +311,30 @@ export default function ExercisePage() {
             <div key={category.id} className="bg-card rounded-2xl shadow-sm overflow-hidden">
               <button
                 onClick={() => setExpandedCategory(expandedCategory === category.id ? null : category.id)}
-                className="w-full p-4 md:p-6 flex items-center justify-between hover:bg-muted/50 transition-colors"
+                className="w-full text-left group"
               >
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
-                    <category.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-semibold text-lg">{category.name}</h3>
-                    <p className="text-sm text-muted-foreground">{category.description}</p>
+                <div className="relative h-32 md:h-40 overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-90 group-hover:opacity-100 transition-opacity z-10`} />
+                  {/* @ts-ignore */}
+                  <img src={category.image} alt={category.name} className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
+
+                  <div className="absolute inset-0 z-20 flex items-center justify-between px-6">
+                    <div className="flex items-center gap-4 text-white">
+                      <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <category.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-2xl mb-1">{category.name}</h3>
+                        <p className="text-white/90 font-medium">{category.description}</p>
+                      </div>
+                    </div>
+                    {expandedCategory === category.id ? (
+                      <ChevronUp className="h-6 w-6 text-white" />
+                    ) : (
+                      <ChevronDown className="h-6 w-6 text-white" />
+                    )}
                   </div>
                 </div>
-                {expandedCategory === category.id ? (
-                  <ChevronUp className="h-5 w-5 text-muted-foreground" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-muted-foreground" />
-                )}
               </button>
 
               {expandedCategory === category.id && (
@@ -330,11 +343,10 @@ export default function ExercisePage() {
                     {category.exercises.map((exercise) => (
                       <div
                         key={exercise.name}
-                        className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                          selectedExercise === `${category.id}-${exercise.name}`
-                            ? `${category.bgColor} border-current ${category.textColor}`
-                            : "border-transparent bg-muted/50 hover:bg-muted"
-                        }`}
+                        className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${selectedExercise === `${category.id}-${exercise.name}`
+                          ? `${category.bgColor} border-current ${category.textColor}`
+                          : "border-transparent bg-muted/50 hover:bg-muted"
+                          }`}
                         onClick={() =>
                           setSelectedExercise(
                             selectedExercise === `${category.id}-${exercise.name}`

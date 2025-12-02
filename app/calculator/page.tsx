@@ -85,19 +85,17 @@ export default function CalculatorPage() {
             {[1, 2, 3].map((s) => (
               <div key={s} className="flex items-center">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${
-                    step >= s
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${step >= s
                       ? "bg-gradient-to-r from-blue-500 to-emerald-500 text-white"
                       : "bg-muted text-muted-foreground"
-                  }`}
+                    }`}
                 >
                   {s}
                 </div>
                 {s < 3 && (
                   <div
-                    className={`w-12 md:w-24 h-1 mx-2 transition-colors ${
-                      step > s ? "bg-gradient-to-r from-blue-500 to-emerald-500" : "bg-muted"
-                    }`}
+                    className={`w-12 md:w-24 h-1 mx-2 transition-colors ${step > s ? "bg-gradient-to-r from-blue-500 to-emerald-500" : "bg-muted"
+                      }`}
                   />
                 )}
               </div>
@@ -146,11 +144,10 @@ export default function CalculatorPage() {
                     <button
                       type="button"
                       onClick={() => handleInputChange("gender", "male")}
-                      className={`p-4 rounded-xl border-2 transition-all ${
-                        formData.gender === "male"
+                      className={`p-4 rounded-xl border-2 transition-all ${formData.gender === "male"
                           ? "border-blue-500 bg-blue-50 text-blue-600"
                           : "border-muted hover:border-blue-300"
-                      }`}
+                        }`}
                     >
                       <span className="text-2xl mb-1 block">👨</span>
                       <span className="font-medium">남성</span>
@@ -158,11 +155,10 @@ export default function CalculatorPage() {
                     <button
                       type="button"
                       onClick={() => handleInputChange("gender", "female")}
-                      className={`p-4 rounded-xl border-2 transition-all ${
-                        formData.gender === "female"
+                      className={`p-4 rounded-xl border-2 transition-all ${formData.gender === "female"
                           ? "border-pink-500 bg-pink-50 text-pink-600"
                           : "border-muted hover:border-pink-300"
-                      }`}
+                        }`}
                     >
                       <span className="text-2xl mb-1 block">👩</span>
                       <span className="font-medium">여성</span>
@@ -220,87 +216,124 @@ export default function CalculatorPage() {
                 체력측정 결과 입력
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Grip Strength */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    <Hand className="h-4 w-4 inline mr-1" />
-                    악력 (kg)
-                  </label>
-                  <p className="text-xs text-muted-foreground mb-2">양손 중 높은 기록</p>
-                  <input
-                    type="number"
-                    value={formData.grip}
-                    onChange={(e) => handleInputChange("grip", parseFloat(e.target.value) || 0)}
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    placeholder="40"
-                    step="0.1"
-                  />
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-full md:w-1/3">
+                      <img src="/images/measure_grip.png" alt="악력 측정" className="w-full h-auto rounded-lg border" />
+                    </div>
+                    <div className="w-full md:w-2/3">
+                      <label className="block text-sm font-medium mb-2">
+                        <Hand className="h-4 w-4 inline mr-1" />
+                        악력 (kg)
+                      </label>
+                      <p className="text-xs text-muted-foreground mb-2">양손 중 높은 기록을 입력하세요</p>
+                      <input
+                        type="number"
+                        value={formData.grip}
+                        onChange={(e) => handleInputChange("grip", parseFloat(e.target.value) || 0)}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="40"
+                        step="0.1"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Sit Up */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    <Timer className="h-4 w-4 inline mr-1" />
-                    윗몸일으키기 (회/분)
-                  </label>
-                  <p className="text-xs text-muted-foreground mb-2">1분간 실시 횟수</p>
-                  <input
-                    type="number"
-                    value={formData.sitUp}
-                    onChange={(e) => handleInputChange("sitUp", parseInt(e.target.value) || 0)}
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    placeholder="30"
-                  />
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-full md:w-1/3">
+                      <img src="/images/measure_situp.png" alt="윗몸일으키기 측정" className="w-full h-auto rounded-lg border" />
+                    </div>
+                    <div className="w-full md:w-2/3">
+                      <label className="block text-sm font-medium mb-2">
+                        <Timer className="h-4 w-4 inline mr-1" />
+                        윗몸일으키기 (회/분)
+                      </label>
+                      <p className="text-xs text-muted-foreground mb-2">1분간 실시한 횟수를 입력하세요</p>
+                      <input
+                        type="number"
+                        value={formData.sitUp}
+                        onChange={(e) => handleInputChange("sitUp", parseInt(e.target.value) || 0)}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="30"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Flexibility */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    <StretchHorizontal className="h-4 w-4 inline mr-1" />
-                    앉아윗몸앞으로굽히기 (cm)
-                  </label>
-                  <p className="text-xs text-muted-foreground mb-2">유연성 측정 (음수 가능)</p>
-                  <input
-                    type="number"
-                    value={formData.flexibility}
-                    onChange={(e) => handleInputChange("flexibility", parseFloat(e.target.value) || 0)}
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    placeholder="10"
-                    step="0.1"
-                  />
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-full md:w-1/3">
+                      <img src="/images/measure_flexibility.png" alt="유연성 측정" className="w-full h-auto rounded-lg border" />
+                    </div>
+                    <div className="w-full md:w-2/3">
+                      <label className="block text-sm font-medium mb-2">
+                        <StretchHorizontal className="h-4 w-4 inline mr-1" />
+                        앉아윗몸앞으로굽히기 (cm)
+                      </label>
+                      <p className="text-xs text-muted-foreground mb-2">유연성 측정 기록 (음수 가능)</p>
+                      <input
+                        type="number"
+                        value={formData.flexibility}
+                        onChange={(e) => handleInputChange("flexibility", parseFloat(e.target.value) || 0)}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="10"
+                        step="0.1"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Standing Jump */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    <Footprints className="h-4 w-4 inline mr-1" />
-                    제자리멀리뛰기 (cm)
-                  </label>
-                  <p className="text-xs text-muted-foreground mb-2">순발력 측정</p>
-                  <input
-                    type="number"
-                    value={formData.standingJump}
-                    onChange={(e) => handleInputChange("standingJump", parseInt(e.target.value) || 0)}
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    placeholder="200"
-                  />
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-full md:w-1/3">
+                      <img src="/images/measure_jump.png" alt="제자리멀리뛰기 측정" className="w-full h-auto rounded-lg border" />
+                    </div>
+                    <div className="w-full md:w-2/3">
+                      <label className="block text-sm font-medium mb-2">
+                        <Footprints className="h-4 w-4 inline mr-1" />
+                        제자리멀리뛰기 (cm)
+                      </label>
+                      <p className="text-xs text-muted-foreground mb-2">순발력 측정 기록</p>
+                      <input
+                        type="number"
+                        value={formData.standingJump}
+                        onChange={(e) => handleInputChange("standingJump", parseInt(e.target.value) || 0)}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="200"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Shuttle Run (Optional) */}
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    <Wind className="h-4 w-4 inline mr-1" />
-                    왕복오래달리기 (회) - 선택
-                  </label>
-                  <p className="text-xs text-muted-foreground mb-2">심폐지구력 측정 (미입력 시 제외)</p>
-                  <input
-                    type="number"
-                    value={formData.shuttleRun || ""}
-                    onChange={(e) => handleInputChange("shuttleRun", e.target.value ? parseInt(e.target.value) : undefined as unknown as number)}
-                    className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    placeholder="선택 입력"
-                  />
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <div className="flex flex-col md:flex-row gap-6 items-center">
+                    <div className="w-full md:w-1/3">
+                      <div className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center text-muted-foreground border">
+                        <Wind className="h-12 w-12 opacity-20" />
+                      </div>
+                    </div>
+                    <div className="w-full md:w-2/3">
+                      <label className="block text-sm font-medium mb-2">
+                        <Wind className="h-4 w-4 inline mr-1" />
+                        왕복오래달리기 (회) - 선택
+                      </label>
+                      <p className="text-xs text-muted-foreground mb-2">심폐지구력 측정 (미입력 시 제외)</p>
+                      <input
+                        type="number"
+                        value={formData.shuttleRun || ""}
+                        onChange={(e) => handleInputChange("shuttleRun", e.target.value ? parseInt(e.target.value) : undefined as unknown as number)}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="선택 입력"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 

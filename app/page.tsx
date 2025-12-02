@@ -11,19 +11,25 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-emerald-500" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero_bg.png"
+            alt="Background"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/80 to-emerald-800/80 mix-blend-multiply" />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/10">
               <Activity className="h-4 w-4" />
               <span className="text-sm font-medium">국민체력측정 빅데이터 기반</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
               당신의 진짜 나이는<br />
               <span className="text-yellow-300">몇 살</span>일까요?
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
               실제 나이와 체력 나이는 다릅니다. 국민체육진흥공단의 체력측정 빅데이터를 기반으로
               나만의 피트에이지를 알아보고, 맞춤형 운동처방을 받아보세요.
             </p>
@@ -156,12 +162,11 @@ export default function Home() {
                 {topRegions.map((region, index) => (
                   <div key={region.region} className="flex items-center justify-between p-4 hover:bg-muted/50 transition-colors">
                     <div className="flex items-center gap-4">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                        index === 0 ? "bg-yellow-400 text-yellow-900" :
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${index === 0 ? "bg-yellow-400 text-yellow-900" :
                         index === 1 ? "bg-gray-300 text-gray-700" :
-                        index === 2 ? "bg-orange-300 text-orange-800" :
-                        "bg-muted text-muted-foreground"
-                      }`}>
+                          index === 2 ? "bg-orange-300 text-orange-800" :
+                            "bg-muted text-muted-foreground"
+                        }`}>
                         {index + 1}
                       </div>
                       <span className="font-medium">{region.region}</span>
@@ -233,14 +238,21 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-emerald-500" />
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="absolute inset-0">
+              <img
+                src="/images/cta_bg.png"
+                alt="Active Lifestyle"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-emerald-900/80 mix-blend-multiply" />
+            </div>
             <div className="relative z-10 py-16 px-8 text-center text-white">
-              <Heart className="h-12 w-12 mx-auto mb-6 animate-pulse" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <Heart className="h-12 w-12 mx-auto mb-6 animate-pulse text-red-400" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-md">
                 지금 바로 측정해보세요
               </h2>
-              <p className="text-white/90 mb-8 max-w-xl mx-auto">
+              <p className="text-white/90 mb-8 max-w-xl mx-auto drop-shadow-sm">
                 국민체육진흥공단의 빅데이터를 기반으로 한 과학적인 체력 분석으로
                 더 건강한 내일을 준비하세요.
               </p>
