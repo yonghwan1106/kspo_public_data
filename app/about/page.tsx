@@ -69,12 +69,12 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold text-lg mb-4 text-blue-600">서비스 URL</h3>
                 <a
-                  href="https://fitage.vercel.app"
+                  href="https://kspo-public-data.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-2xl font-bold text-blue-600 hover:underline"
                 >
-                  https://fitage.vercel.app
+                  https://kspo-public-data.vercel.app
                 </a>
                 <p className="text-muted-foreground mt-2">Vercel 클라우드 플랫폼 배포</p>
               </div>
@@ -104,12 +104,26 @@ export default function AboutPage() {
               2. 활용 데이터
             </h2>
 
+            {/* 공모전 요건 충족 안내 */}
+            <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+              <div className="flex items-start gap-3">
+                <Award className="h-6 w-6 text-blue-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-blue-800 mb-1">공모전 데이터 활용 요건 충족</p>
+                  <p className="text-sm text-blue-700">
+                    본 서비스는 <strong>공공데이터포털(data.go.kr)</strong> 및 <strong>문화빅데이터플랫폼(bigdata-culture.kr)</strong>에
+                    등록된 국민체육진흥공단의 공공데이터 <strong>2건 이상</strong>을 활용하여 개발되었습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mb-6">
               <h3 className="font-semibold text-lg mb-4 text-emerald-600">데이터 출처</h3>
               <div className="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl">
                 <Globe className="h-8 w-8 text-emerald-600" />
                 <div>
-                  <p className="font-semibold">문화빅데이터플랫폼</p>
+                  <p className="font-semibold">문화빅데이터플랫폼 (문화체육관광부·한국문화정보원)</p>
                   <a
                     href="https://www.bigdata-culture.kr"
                     target="_blank"
@@ -122,48 +136,98 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <h3 className="font-semibold text-lg mb-4 text-emerald-600">국민체육진흥공단 데이터셋 (3종)</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="p-6 border rounded-xl hover:shadow-md transition-shadow">
+            <h3 className="font-semibold text-lg mb-4 text-emerald-600">국민체육진흥공단 공공데이터 (2종)</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* 데이터셋 1 */}
+              <div className="p-6 border-2 border-blue-200 rounded-xl hover:shadow-md transition-shadow bg-blue-50/30">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">주요 데이터</span>
+                </div>
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <BarChart3 className="h-6 w-6 text-blue-600" />
                 </div>
                 <h4 className="font-semibold mb-2">체력측정 항목별 측정 데이터</h4>
                 <p className="text-3xl font-bold text-blue-600 mb-2">753,402건</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mb-3">
                   악력, 윗몸일으키기, 유연성, 순발력, 심폐지구력 등 체력측정 원시 데이터
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">기간: 2024.07 ~ 2025.04</p>
+                <div className="text-xs text-muted-foreground space-y-1 mb-3">
+                  <p><strong>제공기관:</strong> 서울올림픽기념국민체육진흥공단</p>
+                  <p><strong>데이터 기간:</strong> 2024.07 ~ 2025.07</p>
+                </div>
+                <a
+                  href="https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=ace0aea7-5eee-48b9-b616-637365d665c1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-blue-600 hover:underline"
+                >
+                  <Globe className="h-3 w-3" />
+                  데이터 상세 보기 →
+                </a>
               </div>
 
-              <div className="p-6 border rounded-xl hover:shadow-md transition-shadow">
+              {/* 데이터셋 2 */}
+              <div className="p-6 border-2 border-emerald-200 rounded-xl hover:shadow-md transition-shadow bg-emerald-50/30">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full font-medium">주요 데이터</span>
+                </div>
                 <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
                   <Heart className="h-6 w-6 text-emerald-600" />
                 </div>
                 <h4 className="font-semibold mb-2">체력 측정별 운동처방 데이터</h4>
                 <p className="text-3xl font-bold text-emerald-600 mb-2">393,447건</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mb-3">
                   유산소, 근력, 유연성, 균형 운동 등 맞춤형 운동처방 데이터
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">기간: 2024.10 ~ 2025.07</p>
-              </div>
-
-              <div className="p-6 border rounded-xl hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-purple-600" />
+                <div className="text-xs text-muted-foreground space-y-1 mb-3">
+                  <p><strong>제공기관:</strong> 서울올림픽기념국민체육진흥공단</p>
+                  <p><strong>데이터 기간:</strong> 2024.07 ~ 2025.07</p>
                 </div>
-                <h4 className="font-semibold mb-2">국민체력측정 현황 데이터</h4>
-                <p className="text-3xl font-bold text-purple-600 mb-2">17개 시도</p>
-                <p className="text-sm text-muted-foreground">
-                  전국 시도별 체력측정 참여 현황 및 등급 분포 데이터
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">기간: 2024.10 ~ 2025.07</p>
+                <a
+                  href="https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=2b1c565d-5f37-4152-966d-5f8094f8cf33"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-emerald-600 hover:underline"
+                >
+                  <Globe className="h-3 w-3" />
+                  데이터 상세 보기 →
+                </a>
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl">
-              <p className="text-sm text-muted-foreground">
-                <strong>총 활용 데이터:</strong> 약 115만건 이상의 국민체육진흥공단 공공데이터 활용
+            {/* 데이터 활용 방법 */}
+            <div className="mt-6 p-5 bg-gray-50 rounded-xl">
+              <h4 className="font-semibold mb-3 flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-emerald-600" />
+                데이터 활용 방법
+              </h4>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <p className="font-medium text-blue-700 mb-2">체력측정 데이터 활용</p>
+                  <ul className="text-muted-foreground space-y-1 list-disc list-inside">
+                    <li>연령대/성별 체력 기준값(평균, 표준편차) 산출</li>
+                    <li>피트에이지(체력나이) 계산 알고리즘 개발</li>
+                    <li>전국 17개 시도별 체력 현황 분석</li>
+                    <li>동일 연령대/성별 백분위 계산</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-medium text-emerald-700 mb-2">운동처방 데이터 활용</p>
+                  <ul className="text-muted-foreground space-y-1 list-disc list-inside">
+                    <li>체력 유형별 추천 운동 분류</li>
+                    <li>운동처방 통계 분석 (유형별 비율)</li>
+                    <li>맞춤형 운동 프로그램 설계</li>
+                    <li>부족한 체력요소별 운동 추천</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200">
+              <p className="text-sm text-emerald-800">
+                <strong>총 활용 데이터:</strong> 약 <strong>115만건</strong> 이상의 국민체육진흥공단 공공데이터 활용
               </p>
             </div>
           </div>

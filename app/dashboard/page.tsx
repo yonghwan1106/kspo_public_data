@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { MapPin, Users, TrendingUp, Award, BarChart3, PieChart, Filter, Map } from "lucide-react";
 import { regionalStats, ageDistribution, summaryStats, fitnessStandards } from "@/lib/data/statistics";
-import KoreaMap from "@/components/charts/KoreaMap";
+import RealKoreaMap from "@/components/charts/RealKoreaMap";
 import {
   BarChart,
   Bar,
@@ -118,7 +118,7 @@ export default function DashboardPage() {
               <Map className="h-5 w-5 text-blue-500" />
               대한민국 체력 지도
             </h2>
-            <KoreaMap
+            <RealKoreaMap
               data={regionalStats}
               selectedRegion={selectedRegion}
               onRegionSelect={setSelectedRegion}

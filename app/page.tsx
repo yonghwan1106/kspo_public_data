@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Activity, TrendingUp, Users, MapPin, Award, Heart, Dumbbell, Target } from "lucide-react";
 import { summaryStats, regionalStats } from "@/lib/data/statistics";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   const topRegions = regionalStats
@@ -10,57 +11,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero_bg.png"
-            alt="Background"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/80 to-emerald-800/80 mix-blend-multiply" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 border border-white/10">
-              <Activity className="h-4 w-4" />
-              <span className="text-sm font-medium">국민체력측정 빅데이터 기반</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-              당신의 진짜 나이는<br />
-              <span className="text-yellow-300">몇 살</span>일까요?
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto drop-shadow-md">
-              실제 나이와 체력 나이는 다릅니다. 국민체육진흥공단의 체력측정 빅데이터를 기반으로
-              나만의 피트에이지를 알아보고, 맞춤형 운동처방을 받아보세요.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/calculator"
-                className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-              >
-                <Target className="h-5 w-5" />
-                내 피트에이지 측정하기
-              </Link>
-              <Link
-                href="/dashboard"
-                className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg border border-white/30 hover:bg-white/30 transition-all"
-              >
-                <MapPin className="h-5 w-5" />
-                전국 체력 현황 보기
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Slider Section */}
+      <HeroSlider />
 
       {/* Stats Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-card rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-card rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
                 <Users className="h-6 w-6 text-blue-600" />
               </div>
@@ -69,7 +27,7 @@ export default function Home() {
               </p>
               <p className="text-sm text-muted-foreground mt-1">총 측정 인원</p>
             </div>
-            <div className="bg-card rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-card rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full mb-4">
                 <TrendingUp className="h-6 w-6 text-emerald-600" />
               </div>
@@ -78,7 +36,7 @@ export default function Home() {
               </p>
               <p className="text-sm text-muted-foreground mt-1">평균 피트에이지</p>
             </div>
-            <div className="bg-card rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-card rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-yellow-100 rounded-full mb-4">
                 <Award className="h-6 w-6 text-yellow-600" />
               </div>
@@ -87,7 +45,7 @@ export default function Home() {
               </p>
               <p className="text-sm text-muted-foreground mt-1">골드등급 비율</p>
             </div>
-            <div className="bg-card rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-card rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full mb-4">
                 <MapPin className="h-6 w-6 text-purple-600" />
               </div>
@@ -243,13 +201,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0">
-              <Image
-                src="/images/cta_bg.png"
-                alt="Active Lifestyle"
-                fill
-                className="object-cover"
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: "url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1920&q=80')"
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-emerald-900/80 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-emerald-900/80" />
             </div>
             <div className="relative z-10 py-16 px-8 text-center text-white">
               <Heart className="h-12 w-12 mx-auto mb-6 animate-pulse text-red-400" />
